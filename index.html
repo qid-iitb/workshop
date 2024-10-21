@@ -36,8 +36,8 @@
 
         /* Logo styles */
         .logo {
-            width: 140px; /* Default logo size */
-            height: auto; /* Maintain aspect ratio */
+            height: 80px; /* Set same height for both logos */
+            width: auto; /* Maintain aspect ratio */
         }
 
         /* Title styles */
@@ -51,7 +51,7 @@
         /* Media query for tablets and smaller screens */
         @media (max-width: 768px) {
             .logo {
-                width: 100px; /* Smaller logo size for tablets */
+                height: 60px; /* Adjust logo height for tablets */
             }
 
             .header-title {
@@ -62,7 +62,7 @@
         /* Media query for very small screens like mobile phones */
         @media (max-width: 480px) {
             .logo {
-                width: 80px; /* Further reduce logo size for mobiles */
+                height: 50px; /* Further reduce logo height for mobiles */
             }
 
             .header-title {
@@ -132,6 +132,7 @@
             padding: 20px;
             width: 85%;
             text-align: center;
+            position: relative; /* Relative for dropdown positioning */
             transition: transform 0.3s ease;
         }
 
@@ -151,6 +152,30 @@
             font-weight: bold;
             color: #333;
             margin-bottom: 10px;
+        }
+
+        /* Dropdown for session details */
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            top: 100%; /* Position below the card */
+            left: 50%;
+            transform: translateX(-50%);
+            margin-top: 10px;
+            padding: 10px;
+            background-color: #f4f4f4;
+            border-left: 4px solid #004d4d;
+            border-radius: 4px;
+            width: 95%;
+            text-align: left;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+            z-index: 100;
+        }
+
+        /* Show dropdown on hover or click */
+        .session-card:hover .dropdown-content,
+        .session-card.active .dropdown-content {
+            display: block;
         }
 
         /* Contact section */
@@ -204,25 +229,25 @@
     </style>
 
     <script>
-        // JavaScript to toggle session details (if using dropdowns for sessions)
-        function toggleDropdown(event) {
-            const card = event.target.closest('.session-card');
-            card.classList.toggle('active');
-        }
+        // JavaScript to toggle session details on click
+        document.addEventListener("DOMContentLoaded", function() {
+            const sessionCards = document.querySelectorAll('.session-card');
+            sessionCards.forEach(card => {
+                card.addEventListener('click', function() {
+                    this.classList.toggle('active');
+                });
+            });
+        });
     </script>
 </head>
-    
 <body>
 
 <header>
     <div class="header-container">
-        <!-- IITB logo with link -->
         <a href="https://www.iitb.ac.in" target="_blank">
             <img src="IITB-Logo.png" alt="IIT Bombay Logo" class="logo">
         </a>
-        <!-- Title of the workshop -->
         <h1 class="header-title">Workshop on Quantum Information and Quantum Dynamics</h1>
-        <!-- QuICST logo with link -->
         <a href="https://www.quicst.org" target="_blank">
             <img src="QuICST-Logo-w.png" alt="QuICST Logo" class="logo">
         </a>
