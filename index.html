@@ -15,15 +15,33 @@
             line-height: 1.6;
         }
 
-        /* Banner section */
+        /* Header section */
         header {
             background-color: #4267B2; /* Facebook Blue */
             color: white;
-            padding: 20px 0;
+            padding: 20px;
             display: flex;
             align-items: center;
-            justify-content: center;
-            flex-wrap: wrap;
+            justify-content: space-between; /* Keeps the logos on left and right */
+            flex-wrap: nowrap; /* Prevents wrapping */
+        }
+        
+        /* Container for logos and title */
+        .header-container {
+            display: flex; /* Use flexbox for alignment */
+            justify-content: space-between; /* Space items between (logos on edges, title centered) */
+            align-items: center;
+            width: 100%; /* Take full width */
+            flex-wrap: nowrap; /* Prevents items from wrapping */
+        }
+        
+        /* Title styles */
+        .header-title {
+            flex: 1; /* Allows the title to take the available space */
+            text-align: center; /* Center the title horizontally */
+            margin: 0 20px; /* Space between title and logos */
+            font-size: 2.0em; /* Default title size */
+            white-space: nowrap; /* Prevents title text from wrapping */
         }
 
         header h1 {
@@ -262,13 +280,15 @@
 <body>
 
 <header>
-    <a href="https://www.iitb.ac.in" target="_blank">
-        <img src="IITB-Logo.png" alt="IIT Bombay Logo" class="iitb-logo">
-    </a>
-    <h1>Workshop on Quantum Information and Quantum Dynamics</h1>
-    <a href="https://www.quicst.org" target="_blank">
-        <img src="QuICST-Logo-w.png" alt="QuICST Logo" class="quicst-logo">
-    </a>
+    <div class="header-container">
+        <a href="https://www.iitb.ac.in" target="_blank">
+            <img src="IITB-Logo.png" alt="IIT Bombay Logo" class="iitb-logo">
+        </a>
+        <h1>Workshop on Quantum Information and Quantum Dynamics</h1>
+        <a href="https://www.quicst.org" target="_blank">
+            <img src="QuICST-Logo-w.png" alt="QuICST Logo" class="quicst-logo">
+        </a>
+    </div>
 </header>
 
 <section class="centered">
