@@ -19,23 +19,25 @@
         header {
             background-color: #4267B2; /* Facebook Blue */
             color: white;
-            padding: 20px 0;
+            padding: 20px;
             display: flex;
             align-items: center;
-            justify-content: center;
-            flex-wrap: wrap;
+            justify-content: space-between; /* Keep items spaced apart */
+            flex-wrap: nowrap; /* Ensure the items stay in one line */
         }
 
-        header h1 {
-            flex: 1;
-            font-size: 2.0em;
-            text-align: center;
-            margin: 0;
-        }
-
-        header img {
+        /* Logo styles */
+        .logo {
             width: 140px; /* Default size for both logos */
             height: auto;
+        }
+        
+        /* Title styles */
+        .header-title {
+            flex-grow: 1; /* Allows the title to take available space */
+            text-align: center;
+            margin: 0 20px; /* Space between the title and logos */
+            font-size: 2.0em;
         }
 
         /* Main Content */
@@ -215,16 +217,12 @@
 
         /* Responsive Styling */
         @media (max-width: 768px) {
-            header img {
-                width: 120px;
+            .logo {
+                width: 100px; /* Adjust logo size for smaller screens */
             }
-            
-            header {
-                flex-direction: row; /* Ensures logos remain on left and right even on mobile */
-            }
-
-            header h1 {
-                font-size: 1.4em;
+        
+            .header-title {
+                font-size: 1.4em; /* Responsive title size */
             }
 
             .session-card {
@@ -243,11 +241,12 @@
 
         /* Media query for very small screens */
         @media (max-width: 480px) {
-            header img {
-                width: 100px; /* Further reduce size for very small screens */
+            .logo {
+                width: 80px; /* Further reduce size for very small screens */
             }
-            header {
-                flex-direction: row; /* Ensures logos remain on left and right even on mobile */
+        
+            .header-title {
+                font-size: 1.2em;
             }
         }
     </style>
@@ -264,13 +263,15 @@
 <body>
 
 <header>
-    <a href="https://www.iitb.ac.in" target="_blank">
-        <img src="IITB-Logo.png" alt="IIT Bombay Logo" style="width: 100px;">
-    </a>
-    <h1>Workshop on Quantum Information and Quantum Dynamics</h1>
-    <a href="https://www.quicst.org" target="_blank">
-        <img src="QuICST-Logo-w.png" alt="QuICST Logo" style="width: 175px;">
-    </a>
+    <div class="header-container">
+        <a href="https://www.iitb.ac.in" target="_blank">
+            <img src="IITB-Logo.png" alt="IIT Bombay Logo" class="logo">
+        </a>
+        <h1 class="header-title">Workshop on Quantum Information and Quantum Dynamics</h1>
+        <a href="https://www.quicst.org" target="_blank">
+            <img src="QuICST-Logo.png" alt="QuICST Logo" class="logo">
+        </a>
+    </div>
 </header>
 
 <section class="centered">
