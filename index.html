@@ -21,27 +21,42 @@
             color: white;
             padding: 20px;
             display: flex;
-            justify-content: center; /* Centers the entire header content */
+            align-items: center;
+            justify-content: space-between; /* Keeps the logos on left and right */
+            flex-wrap: nowrap; /* Prevents wrapping */
         }
-    
+        
+        /* Container for logos and title */
         .header-container {
-            display: flex;
+            display: flex; /* Use flexbox for alignment */
+            justify-content: space-between; /* Space items between (logos on edges, title centered) */
             align-items: center;
-            width: 100%;
-            max-width: 1200px;
-            justify-content: space-between;
-            flex-wrap: nowrap;
+            width: 100%; /* Take full width */
+            flex-wrap: nowrap; /* Prevents items from wrapping */
         }
+        
+        /* Spacer divs take up the same space as the logo containers */
+    	.spacer {
+		width: 99px; /* Match the width of logo containers */
+		height: 1px; /* Minimal height */
+	    }
     
-        /* Individual logo containers with equal width */
-        .logo-container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
+        /* Title styles */
+        .header-title {
+            flex: 1; /* Allows the title to take the available space */
+            text-align: center; /* Center the title horizontally */
+            margin: 0 20px; /* Space between title and logos */
+            font-size: 2.0em; /* Default title size */
+            white-space: nowrap; /* Prevents title text from wrapping */
+        }
+
+        header h1 {
             flex: 1;
-            max-width: 150px; /* Set a max width for logos */
+            font-size: 2.0em;
+            text-align: center;
+            margin: 0;
         }
-    
+
         .iitb-logo {
             height: 100px;
             margin-right: 20px;
@@ -50,17 +65,6 @@
         .quicst-logo {
             height: 85px; /* Slightly smaller */
             margin-left: 20px;
-        }
-    
-        .title-container {
-            flex: 2; /* Ensures the title container takes up twice the space of the logos */
-            text-align: center;
-        }
-    
-        .title-container h1 {
-            margin: 0;
-            font-size: 2.0em;
-            white-space: nowrap; /* Prevents text wrapping */
         }
 
         /* Main Content */
@@ -359,14 +363,13 @@
 
 <header>
     <div class="header-container">
-        <a href="https://www.iitb.ac.in" target="_blank" class="logo-container">
+        <a href="https://www.iitb.ac.in" target="_blank">
             <img src="IITB-Logo.png" alt="IIT Bombay Logo" class="iitb-logo">
         </a>
-        <div class="title-container">
-            <h1>Workshop on Quantum Information<br>
-                and Quantum Dynamics</h1>
-        </div>
-        <a href="https://www.quicst.org" target="_blank" class="logo-container">
+        <div class="spacer"></div>
+        <h1>Workshop on Quantum Information<br>
+            and Quantum Dynamics</h1>
+        <a href="https://www.quicst.org" target="_blank">
             <img src="QuICST-Logo-w.png" alt="QuICST Logo" class="quicst-logo">
         </a>
     </div>
