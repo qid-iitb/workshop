@@ -242,41 +242,49 @@
         }
 
          /* Navigation Bar */
-        .navbar {
-            background-color: #4267B2; /* Facebook Blue */
-            position: sticky;
-            top: 0;
-            width: 100%;
-            z-index: 1000;
-        }
-    
-        .nav-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 10px;
-        }
-    
-        .nav-links a {
-            color: white;
-            text-decoration: none;
-            padding: 10px 20px;
-            font-size: 1.1em;
-            display: inline-block;
-        }
-    
-        .nav-links a:hover {
-            background-color: #365899;
-            border-radius: 5px;
-        }
-    
-        /* Hamburger icon */
-        .icon {
-            display: none;
-            font-size: 1.5em;
-            cursor: pointer;
-            color: white;
-        }
+    .navbar {
+        background-color: #4267B2; /* Facebook Blue */
+        position: sticky;
+        top: 0;
+        width: 100%;
+        z-index: 1000;
+    }
+
+    .nav-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 10px;
+    }
+
+    .nav-links {
+        display: flex;
+        justify-content: center; /* Center-align links */
+        align-items: center;
+        gap: 20px; /* Space between links */
+    }
+
+    .nav-links a {
+        color: white;
+        text-decoration: none;
+        padding: 10px 20px;
+        font-size: 1.1em;
+        display: inline-block;
+    }
+
+    .nav-links a:hover {
+        background-color: #365899;
+        border-radius: 5px;
+    }
+
+    /* Hamburger icon */
+    .icon {
+        display: none;
+        font-size: 1.5em;
+        cursor: pointer;
+        color: white;
+        margin-left: auto; /* Push icon to the right */
+    }
 
         /* Responsive Styling */
         @media (max-width: 768px) {
@@ -335,13 +343,13 @@
         }
         
         function toggleNav() {
-        const nav = document.getElementById("nav-links");
-        if (nav.style.display === "block") {
-            nav.style.display = "none";
-        } else {
-            nav.style.display = "block";
+            const nav = document.getElementById("nav-links");
+            if (nav.style.display === "block") {
+                nav.style.display = "none";
+            } else {
+                nav.style.display = "block";
+            }
         }
-    }
     </script>
 
 </head>
@@ -369,7 +377,7 @@
             <a href="#details">About</a>
             <a href="#schedule">Schedule</a>
             <a href="#contact">Contact</a>
-            <a href="workshop-poster.pdf" target="_blank">Workshop Poster</a>
+            <a href="workshop_poster.pdf" target="_blank">Workshop Poster</a>
             <a href="abstract-document.pdf" target="_blank">Abstract</a>
         </div>
     </div>
@@ -479,8 +487,8 @@
             <div class="session-title">Siddhartha Santra, IIT Bombay</div>
             <div class="dropdown" onclick="toggleDropdown(event)">Title and Abstract</div>
             <div class="dropdown-content">
-                <p><strong>Title:</strong> To be added later</p>
-                <p><strong>Abstract:</strong> To be added later</p>
+                <p><strong>Title:</strong> TBA</p>
+                <p><strong>Abstract:</strong> TBA</p>
             </div>
         </div>
 
