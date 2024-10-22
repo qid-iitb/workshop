@@ -241,6 +241,43 @@
             font-size: 0.9em;
         }
 
+         /* Navigation Bar */
+        .navbar {
+            background-color: #4267B2; /* Facebook Blue */
+            position: sticky;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+        }
+    
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+        }
+    
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            font-size: 1.1em;
+            display: inline-block;
+        }
+    
+        .nav-links a:hover {
+            background-color: #365899;
+            border-radius: 5px;
+        }
+    
+        /* Hamburger icon */
+        .icon {
+            display: none;
+            font-size: 1.5em;
+            cursor: pointer;
+            color: white;
+        }
+
         /* Responsive Styling */
         @media (max-width: 768px) {
             header img {
@@ -263,6 +300,23 @@
             .contact-grid {
                 grid-template-columns: 1fr;
             }
+            
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                width: 100%;
+                background-color: #4267B2;
+            }
+    
+            .nav-links a {
+                text-align: center;
+                padding: 10px;
+                border-top: 1px solid #365899;
+            }
+    
+            .icon {
+                display: block;
+            }
         }
 
         /* Media query for very small screens */
@@ -279,6 +333,15 @@
             const card = event.target.closest('.session-card');
             card.classList.toggle('active');
         }
+        
+        function toggleNav() {
+        const nav = document.getElementById("nav-links");
+        if (nav.style.display === "block") {
+            nav.style.display = "none";
+        } else {
+            nav.style.display = "block";
+        }
+    }
     </script>
 
 </head>
@@ -296,6 +359,22 @@
     </div>
 </header>
 
+    <!-- Navigation Bar -->
+<div class="navbar">
+    <div class="nav-container">
+        <a href="javascript:void(0);" class="icon" onclick="toggleNav()">
+            <i class="fas fa-bars"></i> <!-- Hamburger Icon -->
+        </a>
+        <div id="nav-links" class="nav-links">
+            <a href="#details">Details and Registration</a>
+            <a href="#schedule">Schedule</a>
+            <a href="#contact">Contact Information</a>
+            <a href="workshop-poster.pdf" target="_blank">Workshop Poster</a>
+            <a href="abstract-document.pdf" target="_blank">Abstract Document</a>
+        </div>
+    </div>
+</div>
+    
 <section class="centered">
     <p style="font-size: 1.2em;">The <strong>Workshop on Quantum Information and Quantum Dynamics</strong> will bring together a small group of leading researchers from India and Canada, 
                                     to provide us invaluable insights into their latest work on quantum information, quantum dynamics and other related areas.</p>
